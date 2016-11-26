@@ -2,8 +2,8 @@
 
 	Qompiler is aimed to assist all mappers, novice and advanced, with compiling maps. 
 	This is based on "Ultimate Quake Map Patcher" by Mankrip. (link below)
-	.Currently its set up to run with Ericw's "tyrutils-ericw" compiling tools. (link below)
-	In the future will be set to search for as many compilers and their accompanying settings as I can cram into it.
+	Currently its set up to run with Ericw's "tyrutils-ericw" compiling tools. (link below)
+	In the future it will search for a handful of common compilers.
 	
 [Instructions]
 	- Create a folder named "Qompiler" inside your "Quake folder. (or wherever you prefer)
