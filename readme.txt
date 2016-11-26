@@ -6,6 +6,7 @@
 	In the future it will search for a handful of common compilers.
 	
 [Instructions]
+
 	- Create a folder named "Qompiler" inside your "Quake folder. (or wherever you prefer)
 	- If you dont already have them, download the "tyrutils-eric" compiling tools from the link in the bottom of this readme.
 	- Within the "Qompiler" folder create a folder named "Tools".
