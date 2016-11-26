@@ -6,16 +6,16 @@
 	In the future will be set to search for as many compilers and their accompanying settings as I can cram into it.
 	
 [Instructions]
-	
-	- Extract "Qompiler.zip" into your "Quake" folder. (or anywhere you like, really)
+	- Create a folder named "Qompiler" inside your "Quake folder. (or wherever you prefer)
 	- If you dont already have them, download the "tyrutils-eric" compiling tools from the link in the bottom of this readme.
-	- Within the "Qompiler" folder is a "Tools" folder. Copy the contents of the "bin" folder(these are your compiling tools) in "tyrutils-ericw" to the "Tools" folder within the "Qompiler" folder.
+	- Within the "Qompiler" folder create a folder named "Tools".
+	- Copy the contents of the "bin" folder in "tyrutils-ericw" to the "Tools" folder within the "Qompiler" folder.
 	- Take any map(s) you wish to (re)compile and put them in the "Qompiler" folder.
 	- Double click "Qompiler.bat" to run Qompiler.
 	- Qompiler will prompt you if you didnt put things in the right place and will tell you what to correct.
 	- Qompiler will prompt you to input your desired settings for each compiling tool. 
 		It will display each setting and a description of its function. 
-		These can also be found in "tyrutils-eric/doc".
+		These settings can also be found in "tyrutils-eric/doc", with further descriptions.
 
 [Goals]
 
