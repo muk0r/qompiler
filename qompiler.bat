@@ -1,6 +1,7 @@
 @Echo Off
+setlocal enabledelayedexpansion
 
-Title Qompiler v0.50
+Title Qompiler v0.75
 
 :Start
 If Not Exist tools\qbsp.exe GoTo NoTools
@@ -8,13 +9,27 @@ If Not Exist tools\vis.exe GoTo NoTools
 If Not Exist tools\light.exe GoTo NoTools
 If Not Exist *.MAP GoTo NeedMaps
 If Not Exist Qompiled\Nul MD Qompiled
+If Not Exist Maps\Nul MD Maps
+If Not Exist Logs\Nul MD Logs
+If Not Exist Configs\Nul MD Configs
 If "%1"=="DoIt" GoTo Qompiler
 If Not "%1"=="" GoTo NeedMaps
 
-Echo Log file for Qompiler>QompilerLog.txt
-Echo.>>QompilerLog.txt
+Echo Log file for Qompiler>Logs\QompilerLog.txt
+Echo.>>Logs\QompilerLog.txt
 Echo  Lets Qompile some maps!
+Echo Do you want to load a config?
 Echo.
+Set /p _config=Type a config name to load or New to enter start a new config...
+if "%_config%"=="New" goto NewConfig
+if "%_config%"=="new" goto NewConfig
+) else (
+call configs\%_config%.bat
+
+:NewConfig
+Echo.
+Set /p _cfgname=Type a name for this config...
+Echo.>>configs\%_cfgname%.bat
 Echo 	The first process to run is QBSP...
 Echo.
 Echo	[Description]
@@ -262,26 +277,35 @@ Echo	======================================================================
 Echo.
 Set /P _light=Input any desired light settings. Pres "Enter" to continue...
 For %%i in (*.MAP) do call Qompiler DoIt %%i
-Echo End of log.>>QompilerLog.txt
+Echo set _vis= %_vis%>>configs\%_cfgname%.bat
+Echo set _qbsp= %_qbsp%>>configs\%_cfgname%.bat
+Echo set _light= %_light%>>configs\%_cfgname%.bat
+Echo End of log.>>Logs\QompilerLog.txt
 Echo.
-Echo Qompiling succesful...
 GoTo End
 
 :Qompiler
 Echo ReQompiling map %2...
-Echo ReQompiling %2>>QompilerLog.txt
-tools\qbsp.exe %_qbsp% %2>>QompilerLog.txt
-tools\vis.exe %_vis% %2>>QompilerLog.txt
-tools\light.exe %_light% %2>>QompilerLog.txt
-Echo Finished map %2>>QompilerLog.txt
-Echo.>>QompilerLog.txt
-Echo.>>QompilerLog.txt
-Echo.>>QompilerLog.txt
-Echo %2>>Qompiled.txt
-Echo The following maps have been successfully Qompiled: >>Qompiled.txt
+Echo ReQompiling %2>>Logs\QompilerLog.txt
+tools\qbsp.exe %_qbsp% %2>>Logs\QompilerLog.txt
+tools\vis.exe %_vis% %2>>Logs\QompilerLog.txt
+tools\light.exe %_light% %2>>Logs\QompilerLog.txt
+Echo Finished map %2>>Logs\QompilerLog.txt
+Echo.>>Logs\QompilerLog.txt
+Echo.>>Logs\QompilerLog.txt
+Echo.>>Logs\QompilerLog.txt
+Echo %2>>Logs\Qompiled.txt
+Echo The following maps have been successfully Qompiled: >>Logs\Qompiled.txt
 Move %2 Qompiled>Nul
-If Exist *.Prt Del *.Prt
+If Exist "*.Prt" Del "*.Prt">Nul
+If Exist "*.bsp" Move "*.bsp" Maps>Nul
+If Exist "*.lit" Move "*.lit" Maps>Nul
+If Exist "*.log" Move "*.log" Logs>Nul
+Echo Qompiling successful..
 GoTo End
+
+:LoadConfig
+call %_cfgname
 
 :NeedMaps
 Echo. Qompiler and your maps must be in the same folder.  
