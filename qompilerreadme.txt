@@ -1,11 +1,11 @@
-	[About Qompiler]
+[About Qompiler]
 
 	Qompiler is aimed to assist all mappers, novice and advanced, with compiling maps. 
 	This is based on "Ultimate Quake Map Patcher" by Mankrip. (link below)
 	.Currently its set up to run with Ericw's "tyrutils-ericw" compiling tools. (link below)
 	In the future will be set to search for as many compilers and their accompanying settings as I can cram into it.
 	
-	[Instructions]
+[Instructions]
 	
 	- Extract "Qompiler.zip" into your "Quake" folder. (or anywhere you like, really)
 	- If you dont already have them, download the "tyrutils-eric" compiling tools from the link in the bottom of this readme.
@@ -17,9 +17,10 @@
 		It will display each setting and a description of its function. 
 		These can also be found in "tyrutils-eric/doc".
 
-	[Goals]
+[Goals]
 
-I'd like for Qompiler to acheive the following goals:
+	I'd like for Qompiler to acheive the following goals:
+	
 	- Check for the existence of:
 		a. qbsp.exe
 		b. vis.exe
@@ -37,7 +38,7 @@ I'd like for Qompiler to acheive the following goals:
 		Once the user sets values for the compiling tools, they will be prompted if they wish to save them to a config.
 		During the next use of Qompiler the user will be prompted if they wish to use a config or custom values.
 		
-	[Mentions]
+[Mentions]
 
 	Qompiler, is the work of Mukor(mukor.quake@gmail.com) and was inspired by Mankrips 
 	"Ultimate Quake Map Patcher", namely, reVis.bat.
