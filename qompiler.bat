@@ -295,7 +295,6 @@ Echo.>>Logs\QompilerLog.txt
 Echo.>>Logs\QompilerLog.txt
 Echo.>>Logs\QompilerLog.txt
 Echo %2>>Logs\Qompiled.txt
-Echo The following maps have been successfully Qompiled: >>Logs\Qompiled.txt
 Move %2 Qompiled>Nul
 If Exist "*.Prt" Del "*.Prt">Nul
 If Exist "*.bsp" Move "*.bsp" Maps>Nul
