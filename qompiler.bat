@@ -23,13 +23,11 @@ Echo.
 Set /p _config=Type a config name to load or New to enter start a new config...
 if "%_config%"=="New" goto NewConfig
 if "%_config%"=="new" goto NewConfig
-) else (
-call configs\%_config%.bat
 
 :NewConfig
 Echo.
 Set /p _cfgname=Type a name for this config...
-Echo.>>configs\%_cfgname%.bat
+Echo.>>configs\%_cfgname%.txt
 Echo 	The first process to run is QBSP...
 Echo.
 Echo	[Description]
@@ -277,9 +275,9 @@ Echo	======================================================================
 Echo.
 Set /P _light=Input any desired light settings. Pres "Enter" to continue...
 For %%i in (*.MAP) do call Qompiler DoIt %%i
-Echo set _vis= %_vis%>>configs\%_cfgname%.bat
-Echo set _qbsp= %_qbsp%>>configs\%_cfgname%.bat
-Echo set _light= %_light%>>configs\%_cfgname%.bat
+Echo set _vis= %_vis%>>configs\%_cfgname%.txt
+Echo set _qbsp= %_qbsp%>>configs\%_cfgname%.txt
+Echo set _light= %_light%>>configs\%_cfgname%.txt
 Echo End of log.>>Logs\QompilerLog.txt
 Echo.
 GoTo End
@@ -304,7 +302,7 @@ Echo Qompiling successful..
 GoTo End
 
 :LoadConfig
-call %_cfgname
+call %_cfgname.txt
 
 :NeedMaps
 Echo. Qompiler and your maps must be in the same folder.  
