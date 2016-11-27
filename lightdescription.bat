@@ -5,7 +5,7 @@ Echo.
 Echo		light reads a Quake .bsp file and calculates light and shadow information 
 Echo	based on the entity definitions contained in the .bsp. 
 Echo.
-Echo	The .bsp file is updated with the new light data upon completion, 
+Echo	  The .bsp file is updated with the new light data upon completion, 
 Echo	overwriting any existing lighting data.
 Echo.
 Pause
@@ -41,7 +41,7 @@ Echo.	In most cases, values less than 1.0 will cause no discernable visual diffe
 Echo.
 Echo	[-soft] [n] - Perform post-processing on the lightmap 
 Echo.	which averages adjacent samples to smooth shadow edges. 
-Echo.	If n is specified, the algorithm will take ’n’ samples 
+Echo.	If n is specified, the algorithm will take â€™nâ€™ samples 
 Echo.	on each side of the sample point and replace the original value 
 Echo.	with the average. 
 Echo.	e.g. a value of 1 results in averaging a 3x3 square 
