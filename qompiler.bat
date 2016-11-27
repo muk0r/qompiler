@@ -12,7 +12,7 @@ If Not Exist Qompiled\Nul MD Qompiled
 If Not Exist Maps\Nul MD Maps
 If Not Exist Logs\Nul MD Logs
 If Not Exist Configs\Nul MD Configs
-If "%1"=="DoIt" GoTo Qompiler
+If "%1"=="DoIt" GoTo Qompile
 If Not "%1"=="" GoTo NeedMaps
 
 Echo Log file for Qompiler>Logs\QompilerLog.txt
@@ -25,13 +25,13 @@ Set /p _config=Type a config name to load or New to create a new config...
 if "%_config%"=="New" goto NewConfig
 if "%_config%"=="new" goto NewConfig
 ) else (
-goto LoadConfig 
+goto LoadConfig
 
 :NewConfig
 Echo.
 Set /p _cfgname=Type a name for this config...
-If Not Exist %_config%.* Goto Settings
-If Exist %_config%.* GoTo Overwrite
+If Not Exist %_config%.bat Goto Settings
+If Exist %_config%.bat GoTo Overwrite
 
 :Overwrite
 Echo.
@@ -54,7 +54,9 @@ Echo.
 Call docs\lightdescription.bat
 Set /P _light=Input any desired light settings. Pres "Enter" to continue...
 Echo.
-For %%i in .(*.MAP) do call Qompiler DoIt %%i
+
+
+For %%i in .(*.MAP) goto Qompile %%i
 Echo set _vis= %_vis%>>configs\%_cfgname%.txt
 Echo set _qbsp= %_qbsp%>>configs\%_cfgname%.txt
 Echo set _light= %_light%>>configs\%_cfgname%.txt
