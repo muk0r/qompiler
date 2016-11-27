@@ -6,17 +6,19 @@
 	In the future it will search for a handful of common compilers.
 	
 [Instructions]
+
 	- Create a folder named "Qompiler" inside your "Quake folder. (or wherever you prefer)
+	- Download Qompiler and its accompanying files.
+	- Put muk.bat in a folder named "Configs"
+	- Put the Xdescription.bat files and put them in a folder named "Docs"
 	- If you dont already have them, download the "tyrutils-eric" compiling tools from the link in the bottom of this readme.
 	- Within the "Qompiler" folder create a folder named "Tools".
 	- Copy the contents of the "bin" folder in "tyrutils-ericw" to the "Tools" folder within the "Qompiler" folder.
 	- Take any map(s) you wish to (re)compile and put them in the "Qompiler" folder.
 	- Double click "Qompiler.bat" to run Qompiler.
 	- Qompiler will prompt you if you didnt put things in the right place and will tell you what to correct.
-	- Qompiler will prompt you to input your desired settings for each compiling tool. 
-		It will display each setting and a description of its function. 
-		These settings can also be found in "tyrutils-eric/doc", with further descriptions.
-
+	- Qompiler will lead the way from there!
+	
 [Goals]
 
 	I'd like for Qompiler to acheive the following goals:
@@ -32,7 +34,7 @@
 	- Move through each map on its own.
 		- Perhaps make a "Prompt between each map" setting to allow the input of new map settings.
 	- Tool Selection
-		- Allow the user to completely turn off a tool.
+		- Allow the user to completely turn off a compiling tool.
 	- Create Configs
 		- Allow the user to create a series of configs or profiles to choose from. 
 		Once the user sets values for the compiling tools, they will be prompted if they wish to save them to a config.
