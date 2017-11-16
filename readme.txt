@@ -15,26 +15,20 @@
 	- Qompiler will prompt you if you didnt put things in the right place and will tell you what to correct.
 	- Qompiled maps are put into Qompiler/Maps. Copy them into the Maps folder of your current game/mod. (ie id1/maps)
 	
-[Goals]
+[Features]
 
-	I'd like for Qompiler to acheive the following goals:
-	
-	- Check for the existence of:
+	- Checks for the existence of:
 		a. qbsp.exe
 		b. vis.exe
 		c. light.exe
 		d. .map files
 		e. .bsp files
-	- Allow the user to set options for compiling tools
+	- Allows the user to set options for compiling tools
 		- The user is shown a list of settings and then types in the ones they desire. 
-	- Move through each map on its own.
-		- Perhaps make a "Prompt between each map" setting to allow the input of new map settings.
-	- Tool Selection
-		- Allow the user to completely turn off a tool.
+	- Compile batches of map at once
 	- Create Configs
 		- Allow the user to create a series of configs or profiles to choose from. 
-		Once the user sets values for the compiling tools, they will be prompted if they wish to save them to a config.
-		During the next use of Qompiler the user will be prompted if they wish to use a config or custom values.
+		- Show a list of available configs
 		
 [Mentions]
 
