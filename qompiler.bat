@@ -15,8 +15,8 @@ If Not Exist WADs\Nul MD WADs
 If Not Exist Logs\Nul MD Logs
 If Not Exist Configs\Nul MD Configs
 ::When Qompiler runs a tool or operation, it gets fed two arguments. 
-::First is one of the commands listed below to route to the needed tool.
-::Second is the needed file. Which is used when the tool(s) is run.
+::First(%1) is one of the commands listed below to route to the needed tool.
+::Second(%2) is the needed file. Which is used when the tool is run.
 If "%1"=="DoIt" GoTo Qompile
 If "%1"=="DoExtract" GoTo Textures
 If "%1"=="DoEntities" GoTo Entities
@@ -37,12 +37,17 @@ Echo Lets Qompile some maps.
 Echo.
 Echo 1. [N]ew Configuration
 Echo 2. [L]oad Configuration
-Echo 3. [E]xtract Textures
-Echo 4. [Q]uick Qompile
+Echo 3. [Q]uick Qompile
 Echo.
-Choice /N /C:NLEQ
-If ERRORLEVEL 4 GoTo Quick
-If ERRORLEVEL 3 GoTo RunTextures
+Echo Extract:
+Echo.
+Echo 4. [T]extures
+Echo 5. [E]ntities
+Echo.
+Choice /N /C:NLQTE
+if ERRORLEVEL 5 GoTo RunEntities
+If ERRORLEVEL 4 GoTo RunTextures
+If ERRORLEVEL 3 GoTo Quick
 If ERRORLEVEL 2 GoTo Load
 If ERRORLEVEL 1 GoTo NewConfig
 Echo.
@@ -109,7 +114,7 @@ GoTo Load
 
 :Quick
 Echo.
-Echo You can type 'off' to turn off any tools you dont need to run.
+Echo You can type 'off' to turn off any tools you dont need to run. 
 Echo.
 Set /p _qbsp=Input any desired QBSP settings, then press "Enter" to continue...
 Echo.
@@ -200,7 +205,7 @@ Move %2 Qompiled>Nul
 If Exist "*.wad" Move "*.wad" WADs>nul
 GoTo QompileEnd
 
-:RunTextures
+:RunEntities
 set _filetype=BSP
 If Not Exist *.BSP GoTo NeedMaps
 For %%i in (*.BSP) do call Qompiler DoEntities %%i
@@ -213,7 +218,7 @@ Echo.
 bin\bsputil.exe --extract-entities %2 >nul
 Echo %2>>Logs\qompiled-entities.txt
 Move %2 Qompiled>Nul
-If Exist "*.ent" Move "*.wad" ENTs>nul
+If Exist "*.ent" Move "*.ent" ENTs>nul
 GoTo QompileEnd
 
 :NeedMaps
