@@ -1,9 +1,9 @@
 @Echo Off
 setlocal enabledelayedexpansion
 
-Title Qompiler v1.2
+Title Qompiler v1.05
 ::Make sure these version numbers match
-Set _v=1.2
+Set _v=1.05
 
 If Not Exist bin\qbsp.exe GoTo NoTools
 If Not Exist bin\vis.exe GoTo NoTools
